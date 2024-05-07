@@ -23,21 +23,102 @@
 #sidebar div pre{
    font-size:6pt;
    width: 800px;
-   color: chartreuse;
+   color: cyan;
    overflow-x: scroll;
 }
 #sidebar marquee{
   font-size:8pt;
 }
+.scanned {
+  text-decoration: line-through;
+}
 .subset {
   width: 100%;
   height: auto;
-  max-height: 20%;
+  max-height: 15%;
   overflow-y: scroll;
   cursor: pointer;
-  color: chartreuse;
+  color: cyan;
 }
 ul {
     list-style-type: none;
     margin-left: -18px;
+}
+/* upload */
+input[type="file"] {
+  display: none;
+}
+#sidebar .custom-file-upload {
+    border: 1px solid #888;
+    display: inline-block;
+    padding: 3px 12px;
+    cursor: pointer;
+    color: cyan;
+    opacity: 0.8;
+    font-size: 6pt;
+    border-radius: 10px;
+    width: 174px;
+    text-align: center;
+}
+#sidebar button {
+    font-family: Copperplate, Papyrus, fantasy;
+    background: #333;
+    color: cyan;
+    opacity: 0.8;
+    border: 1px solid #888;
+    padding: 3px 12px;
+    font-size: 5pt;
+    border-radius: 10px;
+    width: 200px;
+    text-transform: uppercase;
+    height: 16px;
+}
+
+/*select which log file to analyze*/
+
+select {
+    font-family: Copperplate, Papyrus, fantasy;
+    text-decoration: bold;
+    text-transform: uppercase;
+    font-size: 5pt;
+    padding: 3px 12px;
+    margin-top: 3px;
+    opacity: 0.8;
+    border-radius: 10px;
+    width: 200px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(62, 62, 62)), color-stop(0.6, rgb(51, 51, 51)), to(rgb(62, 62, 62)));
+    background-image: -moz-linear-gradient(19% 75% 90deg, #5C5C5C, #6E6E6E, #3B3B3B 100%);
+    color: cyan;
+    border: 1px solid #888;
+    outline: none;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* copy to clipboard */
+
+#banner {
+  font-family: Copperplate, Papyrus, fantasy;
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  width: 5%; 
+  height: 15px;
+  color: cyan;
+  text-align: center;
+  background: #333;
+  opacity: 0.8;
+  border-radius: 10px;
+  z-index: 9999;
+  font-size: xx-small;
+  text-transform: uppercase;
+  display: none;
+  padding: 2px;
+}
+.clipboard {
+  cursor: pointer;
 }
