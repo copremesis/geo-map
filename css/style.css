@@ -1,0 +1,43 @@
+#sidebar {
+   font-family: Copperplate, Papyrus, fantasy;
+   margin:10px;
+   position: fixed;
+   top: 0px;
+   right: 20px;
+   width: 30%;
+   height: 100%;
+   background: #333;
+   opacity: 0.8;
+   border-radius: 5px;
+   z-index: 9999;
+   overflow: scroll;
+   color: yellow;
+   padding: 10px;
+}
+#sidebar pre {
+   background: #333;
+   color: yellow;
+   font-size:6pt;
+   border: none;
+}
+#sidebar div pre{
+   font-size:6pt;
+   width: 800px;
+   color: chartreuse;
+   overflow-x: scroll;
+}
+#sidebar marquee{
+  font-size:8pt;
+}
+.subset {
+  width: 100%;
+  height: auto;
+  max-height: 20%;
+  overflow-y: scroll;
+  cursor: pointer;
+  color: chartreuse;
+}
+ul {
+    list-style-type: none;
+    margin-left: -18px;
+}
