@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload Form with Fetch and Async/Await</title>
+</head>
+<body>
+  <style>
+    body {
+      background: #111;
+    } 
+  </style>
+  <link rel="stylesheet" href="css/style.css"/>
+  <div id="sidebar">
+    upload an auth.log file
+    <br>
+    <label for="file-upload" class="custom-file-upload">
+      choose file
+      <input type="file"id="fileInput"accept=".log,.1,.2,.3,.4,.gz">
+    </label>
+    <br>
+    <button onclick="uploadFile()">Upload File</button>
+    <br>
+    <select onchange="changeSource(this)" id='selectLogFile'> 
+      <option> auth.log.1.gz </option>
+      <option> auth.log.2.gz </option>
+      <option> auth.log.3.gz </option>
+      <option> auth.log.4.gz </option>
+      <option> ufw.log.gz </option>
+      <option selected> ufw.log.1.gz </option>
+    </select>
+  </div>
+</body>
+<script src="js/events.js"></script>
+</html>
+

@@ -76,6 +76,14 @@ input[type="file"] {
 
 /*select which log file to analyze*/
 
+#toolbelt {
+  position: fixed;
+  left: 50px;
+  top: 10px;
+  z-index: 9999;
+}
+
+
 select {
     font-family: Copperplate, Papyrus, fantasy;
     text-decoration: bold;
@@ -97,6 +105,12 @@ select {
     appearance: none;
     cursor: pointer;
     text-align: center;
+}
+
+.option {
+  color: cyan;
+  text-transform: uppercase;
+  font-size: xx-small;
 }
 
 /* copy to clipboard */

@@ -1,5 +1,8 @@
 const host = 'http://0.0.0.0:4567';
 const copyPasta = `title="Click to copy to clipboard" class="clipboard" onclick="clipboard(this)"`;
+document.getElementById('selectLogFile').value = localStorage.currentLogFile;
+
+
 const annotate = async (e, x, y) => {
   e.classList.add('scanned');
   scan(e.textContent, x, y);
@@ -12,17 +15,19 @@ const showEvidence = async (e, ip) =>  {
 
 
 //this vs adding via folium
+/*
 const selectMarkup = `
     <select onchange="changeSource(this)" id='selectLogFile'> 
-      <option> auth.log.1.gz </option>
-      <option> auth.log.2.gz </option>
-      <option> auth.log.3.gz </option>
-      <option> auth.log.4.gz </option>
-      <option> ufw.log.gz    </option>
-      <option> ufw.log.1.gz  </option>
+      <option class="option"> auth.log.1.gz </option>
+      <option class="option"> auth.log.2.gz </option>
+      <option class="option"> auth.log.3.gz </option>
+      <option class="option"> auth.log.4.gz </option>
+      <option class="option"> ufw.log.gz    </option>
+      <option class="option"> ufw.log.1.gz  </option>
     </select>
     <br>
 `
+*/
 
 //cleaner and fewer calls to api
 const scan = async(ip, x, y) => {
@@ -39,9 +44,8 @@ const scan = async(ip, x, y) => {
   
   document.getElementById('banner').style.display = 'none';
   document.getElementById('sidebar').innerHTML = `
-    ${selectMarkup}
     ip: <span ${copyPasta}>${ip}</span><br>
-    Entries: ${frequency} <br>
+    Entries: <em ${copyPasta}>${frequency}</em> <br>
     Location: (<em ${copyPasta}>${x},${y}</em>) <br>
 <!--
     duration: ${duration} <br>
@@ -117,6 +121,8 @@ const changeSource = async (e) => {
     },
   };
   //ensure list here too :/
+  document.getElementById('banner').innerHTML = `loading...`;
+  document.getElementById('banner').style.display = 'block';
   const response = await fetch(`${host}/setLogFileTo/${e.value}`, options);
   if(response.ok) {
     let result = await response.json();
